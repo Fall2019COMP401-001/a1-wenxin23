@@ -33,7 +33,6 @@ public class A1Novice {
 		}
 		DecimalFormat df =new DecimalFormat("#.##"); 
 		output[a] = b+". "+SecondName+": "+String.format("%.2f",sum );
-//		String.format("%.2f", total)
 		}
 		
 		scan.close();
