@@ -15,6 +15,8 @@ public class A1Jedi {
 		double[] GoodsPrice = new double[GoodsCount];
 		int[] GoodsSum = new int [GoodsCount];
 		int[] CustomBuy = new int [GoodsCount];
+		boolean[] Once = new boolean[GoodsCount];
+		
 		for (int a = 0; a<GoodsCount; a++) {
 			GoodsName[a] = scan.next();
 			GoodsPrice[a] = scan.nextDouble();
@@ -33,15 +35,29 @@ public class A1Jedi {
 				int CustomEachCount = scan.nextInt();
 				String GoodsChoice = scan.next();
 				for (int d = 0; d<GoodsName.length; d++) {
+		//			int e = 0;
 					if (GoodsName[d].equals(GoodsChoice)) {
 						GoodsSum[d] += CustomEachCount; 
-						CustomBuy[d]++;
+						if (!Once[d]) {
+							CustomBuy[d]++;
+							Once[d] = true;
+						}
+	//					if (CustomBuy[d])
+				//		e++;
+				//		if (e>=1) {
+						
+				//		CustomBuy[d]++;
 					//	sum[b] += (GoodsPrice[d] * CustomEachCount);
 					//	Total += (GoodsPrice[d] * CustomEachCount)/CustomNum;
-						break;
-					}
+					//	break;
+				//	}
+		//				break;
 				}
+					
 		}
+			}for (int g = 0; g < Once.length; g++) {
+				Once[g] = false;
+			}
 	}
 		scan.close();
 		   for (int f=0; f<GoodsCount; f++) {
@@ -56,3 +72,4 @@ public class A1Jedi {
 		   //2 customers bought 5 Banana
 	}
 }
+
